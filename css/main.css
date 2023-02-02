@@ -47,8 +47,6 @@
 }
 
 
-
-
 /* NOTICE */
 .notice {
 
@@ -91,6 +89,7 @@
 }
 .notice .notice-line .inner__left .swiper {
   height: 62px;
+  /* 영역이 최대한 늘어나도록 설정 */
   flex-grow: 1;
 }
 .notice .notice-line .inner__left .swiper-slide {
@@ -113,7 +112,6 @@
   font-size: 30px;
 }
 
-
 .notice .notice-line .inner__right {
   width: 40%;
   height: 100%;
@@ -129,6 +127,7 @@
 .notice .notice-line .inner__right .toggle-promotion {
   width: 62px;
   height: 62px;
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -151,20 +150,23 @@
 .notice .promotion .swiper {
   width: calc(819px * 3 + 20px);
   height: 553px;
+  text-align: center;
+  font-size: 200px;
   position: absolute;
   top: 40px;
+  /* 부모요소에서 왼쪽으로부터 50%지점으로 이동시킨 후, 자신의 가로길이의 절반만큼 왼쪽으로 margin을 줌. */
   left: 50%;
   margin-left: calc((819px * 3 + 20px) / -2);
 }
-.notice .promotion .swiper-silde {
+.notice .promotion .swiper-slide {
   opacity: .2;
   transition: opacity 1s;
   position: relative;
 }
-.notice .promotion .swiper-silde-active {
+.notice .promotion .swiper-slide-active {
   opacity: 1;
 }
-.notice .promotion .swiper-silde .btn {
+.notice .promotion .swiper-slide .btn {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -201,6 +203,7 @@
   z-index: 1;
   cursor: pointer;
   outline: none;
+  /* 화살표 아이콘 > 가운데 정렬*/
   display: flex;
   justify-content: center;
   align-items: center;
@@ -211,7 +214,7 @@
   margin-left: -480px;
 }
 .notice .promotion .swiper-next {
-  left: 50%;
+  right: 50%;
   margin-right: -480px;
 }
 .notice .promotion .swiper-prev:hover,
@@ -259,7 +262,7 @@
 .rewards .btn-group .btn.sign-in {
   width: 110px;
 }
-.rewards .inner .btn-group .btn.gift {
+.rewards .btn-group .btn.gift {
   margin-top: 10px;
   flex-grow: 1;
 }
@@ -274,18 +277,19 @@
 }
 .youtube .youtube__area {
   width: 1920px;
-  background-color: orange;
   position: absolute;
   left: 50%;
   margin-left: calc(1920px / -2);
   top: 50%;
   margin-top: calc(1920px * 9 / 16 / -2);
 }
+/* ::before를 통해서 html에서 요소를 추가하지 않고, css선에서 가상의 요소를 만들어서 content를 추가 */
 .youtube .youtube__area::before {
   content: "";
   display: block;
   width: 100%;
   height: 0;
+  /* youtube영상 16:9 비율 */
   padding-top: 56.25%;
 }
 .youtube .youtube__cover {
@@ -378,14 +382,13 @@
 }
 
 
-
-
 /* PICK YOUR FAVORITE */
 .pick-your-favorite {
   background-image: url("../images/favorite_bg.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
+  /* 더 넓은 너비에 이미지가 맞춰서 출력 */
   background-size: cover;
 }
 .pick-your-favorite .inner {
@@ -396,6 +399,7 @@
   width: 362px;
   display: flex;
   flex-wrap: wrap;
+  /* 우측정렬 */
   justify-content: flex-end;
 }
 .pick-your-favorite .text-group .title {
@@ -443,7 +447,6 @@
   transform: rotateY(180deg);
 }
 .reserve-store .medal .back {
-  position: absolute;
   transform: rotateY(-180deg);
 }
 .reserve-store .medal:hover .back {
@@ -492,12 +495,11 @@
   position: absolute;
   top: 120px;
   left: 550px;
-
 }
-.find-store .title {
+.find-store .text-group .title {
   margin-bottom: 20px;
 }
-.find-store .description {
+.find-store .text-group .description {
   margin-bottom: 20px;
 }
 
@@ -509,7 +511,7 @@
 .awards .inner {
   padding: 40px 0;
 }
-.awards .swiper-container {
+.awards .swiper {
   width: 100%;
   height: 40px;
 }
